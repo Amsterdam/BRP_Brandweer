@@ -1,0 +1,4 @@
+/.idea
+settings.sh
+*.pem
+__pycache__
