@@ -10,9 +10,8 @@ import datetime
 from requests import RequestException
 import xml.etree.ElementTree as ET
 
-from config import config, check_env_vars
-from config_0204 import ns, soap_action
-from parse_0204 import parse_message
+from .config_0204 import ns, soap_action
+from .parse_0204 import parse_message
 
 def _get_Lv01_message(bag_id, zender, ontvanger):
     """Get the stuf message Lv01
@@ -142,15 +141,3 @@ def get_Lv01(bag_ids, config):
             results.extend([parse_message(bag_id, adres) for adres in addresses])
 
     return results
-
-
-if __name__ == "__main__":
-    # execute only if run as a script
-    import pprint
-    pp = pprint.PrettyPrinter(indent=4)
-
-    check_env_vars()
-
-    pp.pprint(get_Lv01("0363200000399540", config))
-    pp.pprint(get_Lv01(["0363200000399540", "0363200000400471"], config))
-    pp.pprint(get_Lv01("0363200000399540x", config))

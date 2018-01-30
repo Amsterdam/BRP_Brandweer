@@ -37,8 +37,7 @@ from dateutil.relativedelta import relativedelta
 
 import xml.etree.ElementTree as ET
 
-from config import check_env_vars
-from config_0204 import ns
+from .config_0204 import ns
 
 _age_categories = [
     {
@@ -184,26 +183,3 @@ def parse_message(bag_id, address, error_message=None):
 
     info["indicatoren"] = _get_indicatoren(ages=ages)
     return info
-
-
-if __name__ == "__main__":
-    # execute only if run as a script
-    import pprint
-    pp = pprint.PrettyPrinter(indent=4)
-
-    check_env_vars()
-
-    birthdate = datetime.date(1962, 1, 17)
-    pp.pprint(_get_age(birthdate))
-    pp.pprint(_get_age_category(_get_age(birthdate)))
-    for i in [11, 12, 13, 69, 70, 71, -1, 999999]:
-        print(i, _get_age_category(i))
-    pp.pprint((_get_indicatoren([])))
-    pp.pprint((_get_indicatoren([13])))
-    pp.pprint((_get_indicatoren([69])))
-    pp.pprint((_get_indicatoren([13, 69])))
-    pp.pprint((_get_indicatoren([12])))
-    pp.pprint((_get_indicatoren([70])))
-    pp.pprint((_get_indicatoren([12, 70])))
-    pp.pprint((_get_indicatoren(range(9))))
-    pp.pprint((_get_indicatoren(range(10))))
