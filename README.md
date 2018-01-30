@@ -1,6 +1,6 @@
 # BRP-Brandweer
 
-API to provide the Brandweer with info about the ages of the habitants at a specific address
+API to provide the Brandweer with indicators about the number and ages of the habitants at a specific address
 
 ## Development
 
@@ -20,23 +20,20 @@ The following variables need to be defined:
     
 The required information to set these variables can be found in the password management system under the key BRP_Brandweer.
 
-## Status
-
-The status of the project is 'Voorbereiding'.
-
-The project in its current status only shows that the retrieval of the required information is technically possible.
-
-In the next phase the project will have to be extended with an API and deployment scripts
-
-### Run the tests
+### Configuration
 
     python3 -m venv ~/venv/BRP_Brandweer
     source ~/venv/BRP_Brandweer/bin/activate
     
     cd src
     pip install -r requirements.txt
-    
-    cd brp_brandweer
-    python config.py
-    python parse_0204.py
-    python stuf_0204.py
+
+### Run the tests
+
+    cd brp_brandweer/api
+    python -m pytest test.py
+
+### Run the server locally
+
+    cd brp_brandweer/api
+    python app.py
