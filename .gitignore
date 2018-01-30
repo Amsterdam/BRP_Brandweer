@@ -2,3 +2,4 @@
 settings.sh
 *.pem
 __pycache__
+.cache

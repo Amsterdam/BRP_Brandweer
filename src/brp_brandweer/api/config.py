@@ -59,12 +59,3 @@ def check_env_vars():
     missing = [var for var in required_env_vars if get_var_value(var) is None]
     if missing:
         raise ValueError(f'Missing required environment variables: {", ".join(missing)}')
-
-
-if __name__ == "__main__":
-    # execute only if run as a script
-    import pprint
-    pp = pprint.PrettyPrinter(indent=4)
-
-    pp.pprint(check_env_vars())
-    pp.pprint(config)

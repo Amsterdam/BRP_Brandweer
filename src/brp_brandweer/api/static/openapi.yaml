@@ -1,0 +1,60 @@
+definitions: {}
+info:
+  title: BRP Brandweer API
+  version: '1.0'
+paths:
+  /brp_brandweer/{bagid}:
+    get:
+      description: ''
+      parameters:
+        - in: path
+          description: BAG ID of the address
+          name: bagid
+          required: true
+          type: string
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: >-
+            indicatoren for the specified address
+          schema:
+            properties:
+              indicatoren:
+                items:
+                  properties:
+                    aanvullende_informatie:
+                      type: string
+                      enum:
+                        - Ingeschrevenen 0-12 jaar X pers., 13-69 jaar Y pers., 70+ jaar Z pers.
+                    indicator:
+                      type: string
+                      enum:
+                        - Kwetsbare personen | Aantal personen
+                    label:
+                      type: string
+                      enum:
+                        - Leeftijd | X ingeschrevenen
+                    waarschuwingsniveau:
+                      type: integer
+                      enum:
+                        - 2 | 3
+              locatie:
+                properties:
+                  bag_id:
+                    type: string
+        '404':
+          description: address not found or BRP not accessible
+          schema:
+            properties:
+              error:
+                type: string
+              locatie:
+                properties:
+                  bag_id:
+                    type: string
+      summary: >-
+        Retrieve indicatoren for an address, specified by a BAG ID
+      tags:
+        - BRP Brandweer
+swagger: '2.0'
