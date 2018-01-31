@@ -39,17 +39,17 @@ from .config_0204 import ns
 
 _age_categories = [
     {
-        "name": '0-12',
+        "name": "0-12",
         "min_age": 0,
         "max_age": 12
     },
     {
-        "name": '13-69',
+        "name": "13-69",
         "min_age": 13,
         "max_age": 69
     },
     {
-        "name": '70+',
+        "name": "70+",
         "min_age": 70,
         "max_age": 125
     }
@@ -117,7 +117,7 @@ def _get_indicatoren(ages):
 
     # compose a string that describes the number of persons per age category
     aanvullende_informatie = "Ingeschrevenen " + \
-                             ', '.join([f"{category} jaar: {age_categories[category]} pers."
+                             ", ".join([f"{category} jaar: {age_categories[category]} pers."
                                         for category in _get_age_category_names()])
 
     # Convert the ages into indicatoren

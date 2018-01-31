@@ -26,44 +26,44 @@ def test_age():
 
 def test_age_categories():
     for i in [0, 11, 12]:
-        assert _get_age_category(i) == '0-12'
+        assert _get_age_category(i) == "0-12"
     for i in [13, 69]:
-        assert _get_age_category(i) == '13-69'
+        assert _get_age_category(i) == "13-69"
     for i in [70, 71]:
-        assert _get_age_category(i) == '70+'
+        assert _get_age_category(i) == "70+"
     for i in [-1, 999999]:
         assert _get_age_category(i) is None
 
 
 def test_indicatoren():
     assert _get_indicatoren([]) == [{
-        'aanvullende_informatie': 'Ingeschrevenen 0-12 jaar: 0 pers., 13-69 jaar: 0 pers., 70+ jaar: 0 pers.',
-        'indicator': 'Kwetsbare personen',
-        'label': 'Leeftijd',
-        'waarschuwingsniveau': 3
+        "aanvullende_informatie": "Ingeschrevenen 0-12 jaar: 0 pers., 13-69 jaar: 0 pers., 70+ jaar: 0 pers.",
+        "indicator": "Kwetsbare personen",
+        "label": "Leeftijd",
+        "waarschuwingsniveau": 3
     }]
     assert _get_indicatoren([13]) == [{
-        'aanvullende_informatie': 'Ingeschrevenen 0-12 jaar: 0 pers., 13-69 jaar: 1 pers., 70+ jaar: 0 pers.',
-        'indicator': 'Kwetsbare personen',
-        'label': 'Leeftijd',
-        'waarschuwingsniveau': 3
+        "aanvullende_informatie": "Ingeschrevenen 0-12 jaar: 0 pers., 13-69 jaar: 1 pers., 70+ jaar: 0 pers.",
+        "indicator": "Kwetsbare personen",
+        "label": "Leeftijd",
+        "waarschuwingsniveau": 3
     }]
     assert _get_indicatoren([69]) == [{
-        'aanvullende_informatie': 'Ingeschrevenen 0-12 jaar: 0 pers., 13-69 jaar: 1 pers., 70+ jaar: 0 pers.',
-        'indicator': 'Kwetsbare personen',
-        'label': 'Leeftijd',
-        'waarschuwingsniveau': 3
+        "aanvullende_informatie": "Ingeschrevenen 0-12 jaar: 0 pers., 13-69 jaar: 1 pers., 70+ jaar: 0 pers.",
+        "indicator": "Kwetsbare personen",
+        "label": "Leeftijd",
+        "waarschuwingsniveau": 3
     }]
     assert _get_indicatoren([13, 69]) == [{
-        'aanvullende_informatie': 'Ingeschrevenen 0-12 jaar: 0 pers., 13-69 jaar: 2 pers., 70+ jaar: 0 pers.',
-        'indicator': 'Kwetsbare personen',
-        'label': 'Leeftijd',
-        'waarschuwingsniveau': 3
+        "aanvullende_informatie": "Ingeschrevenen 0-12 jaar: 0 pers., 13-69 jaar: 2 pers., 70+ jaar: 0 pers.",
+        "indicator": "Kwetsbare personen",
+        "label": "Leeftijd",
+        "waarschuwingsniveau": 3
     }]
     assert _get_indicatoren([12]) == [{
-        'aanvullende_informatie': 'Ingeschrevenen 0-12 jaar: 1 pers., 13-69 jaar: 0 pers., 70+ jaar: 0 pers.',
-        'indicator': 'Kwetsbare personen',
-        'label': 'Leeftijd',
+        "aanvullende_informatie": "Ingeschrevenen 0-12 jaar: 1 pers., 13-69 jaar: 0 pers., 70+ jaar: 0 pers.",
+        "indicator": "Kwetsbare personen",
+        "label": "Leeftijd",
         'waarschuwingsniveau': 2
     }]
     assert _get_indicatoren([70]) == [{

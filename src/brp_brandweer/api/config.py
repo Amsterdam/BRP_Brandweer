@@ -58,4 +58,4 @@ def check_env_vars():
     """
     missing = [var for var in required_env_vars if get_var_value(var) is None]
     if missing:
-        raise ValueError(f'Missing required environment variables: {", ".join(missing)}')
+        raise ValueError(f"Missing required environment variables: {', '.join(missing)}")

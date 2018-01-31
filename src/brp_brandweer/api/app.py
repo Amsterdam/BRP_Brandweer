@@ -17,7 +17,7 @@ def create_app():
     return app
 
 
-@app.route('/brp_brandweer/<string:bag_id>', methods=['GET'])
+@app.route("/brp_brandweer/<string:bag_id>", methods=["GET"])
 def get_bag_id_info(bag_id):
     info = get_Lv01(bag_id, config)[0]
     response = jsonify(info)
