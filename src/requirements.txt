@@ -10,7 +10,6 @@ itsdangerous==0.24
 Jinja2==2.10
 MarkupSafe==1.0
 mccabe==0.6.1
-pkg-resources==0.0.0
 pluggy==0.6.0
 py==1.5.2
 pycodestyle==2.3.1

@@ -1,0 +1,12 @@
+version: "3.0"
+services:
+  web:
+    build: src/
+    ports:
+      - "8109:8000"
+    environment:
+      - PYTHONPATH=/app/api
+      - UWSGI_HTTP=:8000
+      - UWSGI_MODULE=api.app
+      - UWSGI_CALLABLE=app
+      - UWSGI_MASTER=1

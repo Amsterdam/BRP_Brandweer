@@ -8,13 +8,9 @@ from flask_cors import CORS
 
 
 app = Flask(__name__)
-
-
-def create_app():
-    log_handler = logging.StreamHandler()
-    app.logger.addHandler(log_handler)
-    CORS(app)
-    return app
+log_handler = logging.StreamHandler()
+app.logger.addHandler(log_handler)
+CORS(app)
 
 
 @app.route("/brp_brandweer/<string:bag_id>", methods=["GET"])
@@ -27,4 +23,4 @@ def get_bag_id_info(bag_id):
 
 if __name__ == "__main__":
     check_env_vars()
-    create_app().run()
+    app.run(port=8000)

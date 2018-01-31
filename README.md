@@ -30,11 +30,32 @@ The required information to set these variables can be found in the password man
 
 ### Run the tests
 
-    cd brp_brandweer/api
+    cd src/brp_brandweer/api
     flake8
     python -m pytest
 
 ### Run the server locally
 
-    cd brp_brandweer/api
+    cd src/brp_brandweer/api
     python app.py
+    
+test urls:
+    
+    http://localhost:8000/brp_brandweer/123
+    http://localhost:8000/static/openapi.yaml
+    
+### Docker
+
+    docker-compose build
+    docker-compose up -d
+
+test urls:
+    
+    http://localhost:8109/brp_brandweer/123
+    http://localhost:8109/static/openapi.yaml
+
+### Docker tests
+
+    cd src/.jenkins/test
+    docker-compose build
+    docker-compose run tests

@@ -1,0 +1,9 @@
+.cache
+*.pem
+*.pyc
+.git
+.gitignore
+.idea
+**/__pycache__/
+Dockerfile
+.dockerignore

@@ -1,0 +1,6 @@
+version: "3.0"
+services:
+  tests:
+    build: ../..
+    command: >
+      bash -c "/.jenkins/test/test.sh"
