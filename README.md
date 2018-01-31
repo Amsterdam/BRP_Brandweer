@@ -31,7 +31,8 @@ The required information to set these variables can be found in the password man
 ### Run the tests
 
     cd brp_brandweer/api
-    python -m pytest test.py
+    flake8
+    python -m pytest
 
 ### Run the server locally
 

@@ -35,8 +35,6 @@ De eerste indicator is er dus altijd (waarschuwingsniveau 2 of 3) als de BRP iet
 import datetime
 from dateutil.relativedelta import relativedelta
 
-import xml.etree.ElementTree as ET
-
 from .config_0204 import ns
 
 _age_categories = [

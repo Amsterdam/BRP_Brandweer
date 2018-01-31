@@ -13,6 +13,7 @@ import xml.etree.ElementTree as ET
 from .config_0204 import ns, soap_action
 from .parse_0204 import parse_message
 
+
 def _get_Lv01_message(bag_id, zender, ontvanger):
     """Get the stuf message Lv01
 
@@ -82,7 +83,7 @@ def _get_Lv01_message(bag_id, zender, ontvanger):
     """
 
 
-def get_Lv01(bag_ids, config):
+def get_Lv01(bag_ids, config): # noqa C901 'get_Lv01' is too complex (8)
     """Get the Lv01 message
 
     Args:

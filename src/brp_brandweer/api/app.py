@@ -11,7 +11,6 @@ app = Flask(__name__)
 
 
 def create_app():
-    log = logging.getLogger(__name__)
     log_handler = logging.StreamHandler()
     app.logger.addHandler(log_handler)
     CORS(app)
